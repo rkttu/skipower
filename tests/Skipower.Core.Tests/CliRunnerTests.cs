@@ -137,6 +137,24 @@ public sealed class CliRunnerTests
         }
     }
 
+    [Theory]
+    [InlineData("ko-KR", "ko")]
+    [InlineData("en-US", "en")]
+    [InlineData("ja-JP", "en")]
+    public void CurrentWindowsUiCultureSelectsKoreanOrEnglish(string cultureName, string expectedLanguage)
+    {
+        CultureInfo original = CultureInfo.CurrentUICulture;
+        try
+        {
+            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(cultureName);
+            Assert.Equal(expectedLanguage, UiStrings.ForCurrentCulture().LanguageCode);
+        }
+        finally
+        {
+            CultureInfo.CurrentUICulture = original;
+        }
+    }
+
     private static (int Code, string Output, string Error) Run(
         string[] args, FakeController fake, IElevatedProcessLauncher? launcher = null, UiStrings? strings = null)
     {
