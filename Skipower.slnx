@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Skipower.Cli/Skipower.Cli.csproj" />
+    <Project Path="src/Skipower.Core/Skipower.Core.csproj" />
+    <Project Path="src/Skipower.Gui/Skipower.Gui.csproj" />
+    <Project Path="src/Skipower.Windows/Skipower.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Skipower.Core.Tests/Skipower.Core.Tests.csproj" />
+    <Project Path="tests/Skipower.Windows.Tests/Skipower.Windows.Tests.csproj" />
+  </Folder>
+</Solution>

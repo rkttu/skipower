@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>skipower</AssemblyName>
+    <PublishAot Condition="'$(RuntimeIdentifier)' != ''">true</PublishAot>
+    <SelfContained Condition="'$(RuntimeIdentifier)' != ''">true</SelfContained>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Skipower.Core.Tests" />
+    <ProjectReference Include="..\Skipower.Core\Skipower.Core.csproj" />
+    <ProjectReference Include="..\Skipower.Windows\Skipower.Windows.csproj" />
+  </ItemGroup>
+</Project>
